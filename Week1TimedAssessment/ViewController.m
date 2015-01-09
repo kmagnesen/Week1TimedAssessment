@@ -10,18 +10,39 @@
 
 @interface ViewController ()
 
+@property (strong, nonatomic) IBOutlet UITextField *valueOneTextField;
+@property (strong, nonatomic) IBOutlet UITextField *valueTwoTextField;
+
+@property (strong, nonatomic) IBOutlet UILabel *multiplyLabel;
+
+@property (strong, nonatomic) IBOutlet UINavigationItem *answerLabel;
+
+@property NSString *multiply;
+
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
+    self.multiply = [NSString stringWithFormat:@"*"];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)onCalculateButtonTapped:(UIButton *)sender {
+
+    NSString *userFirstEntry = [self.valueOneTextField text];
+    int firstEntry = [userFirstEntry intValue];
+    NSString *userSecondEntry = [self.valueTwoTextField text];
+    int secondEntry = [userSecondEntry intValue];
+
+    int answer;
+
+    answer = firstEntry * secondEntry;
+
+
+
 }
+
 
 @end
